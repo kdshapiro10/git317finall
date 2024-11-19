@@ -1,5 +1,39 @@
+:root {
+
+}
+
+
 body {
+    box-sizing: border-box;
+}
+
+header, main, footer {
+    width:100%;
+    padding: 20px;
+    max-width: calc(1280px - 32px);
     margin: 0 auto;
-    min-width:1280px;
-    
+}
+
+/*-----HEADINGS-----*/
+h1, h2, h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+.sr-only {
+    position:absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
