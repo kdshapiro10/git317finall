@@ -19,16 +19,18 @@
             <ul>   
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#albums">Albums</a></li>
-                <li><a href="#">Tour</a></li>
+                <li><a href="#tour">Tour</a></li>
             </ul>
         </nav>
     </div>
-    <img src="" alt="">
+    <img src="images/billie1.jpg" alt="billie eilish on stage wearing a white bandana and a red jersey">
 </header>
 <main id="main">
     <section id="albums">
-        <h2>Albums</h2>
-        <section id="whenwefallasleep">
+        <h2>Music</h2>
+        <section id="album1" class="currentItem">
+            <h3>WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?</h3>
+            <img src="images/whenwefallcover.jpg" alt="Billie Eilish's album for when we all fall asleep where do we go">
             <ul class="tracklist">
                 <li>!!!!!!!</li>
                 <li>bad guy</li>
@@ -45,7 +47,9 @@
                 <li>goodbye</li>
             </ul>
         </section>
-        <section id="happierthanever">
+        <section id="album2" class="hiddenItem">
+            <h3>Happier Than Ever</h3>
+            <img src="images/happierthanevercover.jpg" alt="Billie Eilish's album cover for Happier Than Ever">
             <ul class="tracklist">
                 <li>Getting Older</li>
                 <li>I Didn't Change My Number</li>
@@ -65,7 +69,9 @@
                 <li>Male Fantasy</li>
             </ul>
         </section>
-        <section id="hitmehardandsoft">
+        <section id="album3" class="hiddenItem">
+            <h3>HIT ME HARD AND SOFT</h3>
+            <img src="images/hardandsoft_cover.png" alt="Billie Eilish's album cover for Hit Me Hard And Soft">
             <ul class="tracklist">
                 <li>SKINNY</li>
                 <li>LUNCH</li>
@@ -79,13 +85,30 @@
                 <li>BLUE</li>
             </ul>
         </section>
+        <section id="switcherButtons">
+            <h2 class="sr-only">Click on a Button to View a Product</h2>
+            <button id="btn1">WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?</button>
+            <button id="btn2">Happier Than Ever</button>
+            <button id="btn3">HIT ME HARD AND SOFT</button>
+        </section>
     </section>
     <section id="tour">
         <h2>Tour Dates</h2>
 
     </section>
     <section id="game">
-
+        <h2>Play For a Vinyl!</h2>
+        <img src="images/billie_vinyl.png" alt="billie eilish holding up a vinyl of her newest album HIT ME HARD AND SOFT">
+        <form>
+            <label for="numGuess">Enter a Number Between 1 and 10:</label>
+            <span class="message">Please enter a number from 1 to 10</span>
+            <input type="number" name="numGuess" id="numGuess">
+            <input type="submit" name="guessGame" id="guessGame" value="Play the Game!">
+        </form>
+        <section id="gameDisplay">
+            <h3>Guess a Number!</h3>
+            <p>Want a chance to win a free signed Billie Eilish Vinyl? Enter a number between 1 and 10 in the box to the left. If the number you guessed matches the number given, You Win! </p>
+        </section>
     </section>
     <section id="contact">
 
