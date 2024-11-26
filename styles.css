@@ -59,3 +59,41 @@ h1, h2, h3 {
     height: 1px;
     overflow: hidden;
 }
+
+#albums img {
+    width: 400px;
+    height: 400px;
+    grid-row: 1/-1;
+}
+
+#albums {
+    background-color: var(--orange);
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+}
+
+#albums .currentItem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 1rem;
+}
+
+.hiddenItem {
+    display: none;
+}
+
+
+#albumButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    width: fit-content;
+    margin: 2rem auto;
+}
+
+#albums h3 {
+    grid-column: 2/-1;
+    align-self: end;
+}
