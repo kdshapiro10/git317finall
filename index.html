@@ -29,7 +29,7 @@
     </div>
 </header>
 <main id="main">
-    <section>
+    <section id="tour">
         <h2>ON TOUR NOW!</h2>
         <p>Join Billie Eilish along with The Marias, Nat and Alex Wolff, and Towa Bird on her Hit Me Hard And Soft Tour. </p>
     </section>
@@ -100,18 +100,22 @@
         </section>
     </section>
     <section id="game">
-        <h2>Play For a Vinyl!</h2>
-        <img src="images/billie_vinyl.png" alt="billie eilish holding up a vinyl of her newest album HIT ME HARD AND SOFT">
-        <form>
-            <label for="numGuess">Enter a Number Between 1 and 10:</label>
-            <span class="message">Please enter a number from 1 to 10</span>
-            <input type="number" name="numGuess" id="numGuess">
-            <input type="submit" name="guessGame" id="guessGame" value="Play the Game!">
-        </form>
-        <section id="gameDisplay">
-            <h3>Guess a Number!</h3>
-            <p>Want a chance to win a free signed Billie Eilish Vinyl? Enter a number between 1 and 10 in the box to the left. If the number you guessed matches the number given, You Win! </p>
-        </section>
+        <div>
+            <h2>Play For a Vinyl!</h2>
+            <form>
+                <label for="numGuess">Enter a Number Between 1 and 10:</label>
+                <span class="message">Please enter a number from 1 to 10</span>
+                <input type="number" name="numGuess" id="numGuess">
+                <input type="submit" name="guessGame" id="guessGame" value="PRESS TO GUESS!">
+            </form>
+            <p id="gameOutput"></p>
+            <section id="gameDisplay">
+                <h3>Guess a Number!</h3>
+                <img src="images/billie_vinyl.png" alt="billie eilish holding up a vinyl of her newest album HIT ME HARD AND SOFT">
+                <p>Want a chance to win a free signed Billie Eilish Vinyl? Enter a number between 1 and 10 in the box to the left. If the number you guessed matches the number given, You Win! </p>
+                <p id="gameOutput"></p>
+            </section>
+        </div>
     </section>
     <section id="contact">
 
