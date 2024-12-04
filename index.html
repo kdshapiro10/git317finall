@@ -32,6 +32,20 @@
     <section id="tour">
         <h2>ON TOUR NOW!</h2>
         <p>Join Billie Eilish along with The Marias, Nat and Alex Wolff, and Towa Bird on her Hit Me Hard And Soft Tour. </p>
+        <img src="images/billie1.jpg" alt="billie eilish on hit me hard and soft tour wearing plaid shirt, gold fitted hat">
+        <ul>
+            <li><strong>DEC 3, 2024</strong><br> VANCOUVER, BC</li>
+            <li><strong>DEC 5, 2024</strong><br> SEATTLE, WA</li>
+            <li><strong>DEC 6, 2024</strong><br> SEATTLE, WA</li>
+            <li><strong>DEC 5, 2024</strong><br> VANCOUVER, BC</li>
+            <li><strong>DEC 8, 2024</strong><br> PORTLAND, OR</li>
+            <li><strong>DEC 10, 2024</strong><br> SAN JOSE, CA</li>
+            <li><strong>DEC 11, 2024</strong><br> SAN JOSE, CA</li>
+            <li><strong>DEC 13, 2024</strong><br> GLENDALE, AZ</li>
+            <li><strong>DEC 16, 2024</strong><br> INGLEWOOD, CA</li>
+            <li><strong>DEC 17, 2024</strong><br> INGLEWOOD, CA</li>
+        </ul>
+        </div>
     </section>
     <section id="albums">
         <h2>MUSIC</h2>
@@ -102,7 +116,7 @@
     <section id="game">
         <div>
             <h2>Play For a Vinyl!</h2>
-            <form>
+            <form id="gameForm">
                 <label for="numGuess">Enter a Number Between 1 and 10:</label>
                 <span class="message">Please enter a number from 1 to 10</span>
                 <input type="number" name="numGuess" id="numGuess">
@@ -118,13 +132,44 @@
     </section>
     <section id="contact">
         <h2>Stay in touch with Billie!</h2>
-        <form>
-            
+        <img src="images/blohsh.png" alt="billie eilish blohsh logo embroidered in orange">
+        <form id="contactForm" action="">
+            <label for="fullName">Full Name: <span class="required">*</span></label>
+            <input type="text" name="fullName" id="fullName">
+            <p class="hidden">Please enter a valid full name</p>
+            <label for="phone">Phone Number:</label>
+            <input type="phone" name="phone" id="phone">
+            <p class="hidden">Please enter a valid phone number</p>
+            <label for="email">Email Address:</label>
+            <input type="email" name="email" id="email">
+            <p class="hidden">Please enter a valid email address </p>
+            <label for="comments">Comments: <span class="required">*</span></label>
+            <textarea for="comments" id="comments"></textarea>
+            <p class="hidden">Please enter a comment</p>
+            <fieldset>
+                <legend>Preferred Contact: <span class="required">*</span></legend>
+                <label for="phone" class="radio">
+                        <span class="radio-input">
+                            <input type="radio" name="prefContact" id="phone" value="phone" required checked>
+                            <span class="radio_control"></span>
+                        </span>
+                        <span class="radio_label">Phone</span>
+                </label>
+                <label for="email" class="radio">
+                    <span class="radio_input">
+                        <input type="radio" name="prefContact" id="email" value="email">
+                        <span class="radio_control"></span>
+                    </span>
+                    <span class="radio_label">Email</span>
+                </label>
+            </fieldset>
+            <input type="submit" name="submitcontact" id="submitcontact" value="Let Us Know!">
+            <p id="contactmethod" class="hidden"></p>
         </form>
     </section>
 </main>
 <footer>
-    <p>Copyright &copy; Kylie Shapiro 2024</p>
+    <p>Copyright &copy; Kylie Shapiro | GIT 417 Fall 2024</p>
 </footer>
 </body>
 </html>
