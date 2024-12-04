@@ -112,7 +112,7 @@ h1, h2, h3 {
     grid-row: 1/-1;
     grid-column: 2/-1;
     margin-top: 40px;
-    margin-left: 94px;
+    margin-left: 100px;
 }
 
 #albums h3 {
@@ -157,7 +157,6 @@ h1, h2, h3 {
     display: none;
 }
 
-
 #albumButtons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -165,7 +164,7 @@ h1, h2, h3 {
     width: fit-content;
     position: relative;
     left: 40px;
-    top: -80px;
+    bottom: 0;
 }
 
 #btn1, #btn2, #btn3 {
@@ -184,6 +183,7 @@ h1, h2, h3 {
     box-shadow: -10px 8px 10px #15162E;
     font-size: 21px;
 }
+
 
 #game {
     background-color: var(--blue);
