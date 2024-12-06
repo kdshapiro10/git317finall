@@ -137,34 +137,34 @@
             <label for="fullName">Full Name: <span class="required">*</span></label>
             <input type="text" name="fullName" id="fullName">
             <p class="hidden">Please enter a valid full name</p>
-            <label for="phone">Phone Number:</label>
+            <label for="phone">Phone Number:<span class="phoneRequired">*</span> </label>
             <input type="phone" name="phone" id="phone">
             <p class="hidden">Please enter a valid phone number</p>
-            <label for="email">Email Address:</label>
+            <label for="email">Email Address: <span class="emailRequired">*</span></label>
             <input type="email" name="email" id="email">
-            <p class="hidden">Please enter a valid email address </p>
+            <p class="hidden">Please enter a valid email address</p>
             <label for="comments">Comments: <span class="required">*</span></label>
             <textarea for="comments" id="comments"></textarea>
             <p class="hidden">Please enter a comment</p>
             <fieldset>
                 <legend>Preferred Contact: <span class="required">*</span></legend>
-                <label for="phone" class="radio">
+                <label for="phoneProf" class="radio">
                         <span class="radio-input">
-                            <input type="radio" name="prefContact" id="phone" value="phone" required checked>
+                            <input type="radio" name="prefContact" id="phonePref" value="phone" required checked>
                             <span class="radio_control"></span>
                         </span>
                         <span class="radio_label">Phone</span>
                 </label>
-                <label for="email" class="radio">
+                <label for="emailPref" class="radio">
                     <span class="radio_input">
-                        <input type="radio" name="prefContact" id="email" value="email">
+                        <input type="radio" name="prefContact" id="emailPref" value="email">
                         <span class="radio_control"></span>
                     </span>
                     <span class="radio_label">Email</span>
                 </label>
             </fieldset>
-            <input type="submit" name="submitcontact" id="submitcontact" value="Let Us Know!">
-            <p id="contactmethod" class="hidden"></p>
+            <input type="submit" name="submitcontact" id="submitcontact" value="Send!">
+            <p id="contactOutput" class="hidden"></p>
         </form>
     </section>
 </main>

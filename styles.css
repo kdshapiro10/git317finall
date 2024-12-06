@@ -3,12 +3,13 @@
     --blue: #013CA2;
     --navy: #15162E;
     --white: #FFFFFF;
+    --black: #000000;
     --box-shadow: -5px 5px 5px var(--navy);
     
 }
 
 html {
-    background-color:black;
+    background-color: var(--white);
 }
 
 body {
@@ -16,6 +17,16 @@ body {
     color: var(--white);
 }
 
+body.dark {
+    background-color: var(--black);
+
+}
+
+body.dark #tour h2 {
+    color: var(--white);
+}
+
+/*-----HEADER STYLES----*/
 header, main, footer {
     width:100%;
     padding: 20px;
@@ -50,7 +61,7 @@ ul li {
 }
 
 li a {
-    color: black;
+    color: var(--black);
     text-decoration: none;
     font-size: 15px;
     padding: 10px;
@@ -67,6 +78,7 @@ li a:hover {
     font-size:16px;
 }
 
+/*-----TEXT STYLES-----*/
 h1 {
     font-family: "Lalezar", serif;
     text-transform: uppercase;
@@ -105,11 +117,12 @@ h1, h2, h3 {
     overflow: hidden;
 }
 
+/*-----TOUR SECTION STYLES-----*/
 #tour h2 {
     margin-top: 0;
     grid-column: 1/-1;
     font-size: 35px;
-    color:var(--white);
+    color:var(--black);
     font-weight: bold;
     font-family: "Lalezar", serif;
     text-shadow:2px 2px 2px #15162E;
@@ -117,14 +130,17 @@ h1, h2, h3 {
 
 #tour {
     display: grid;
-    grid-template-columns: 1fr 1fr;;
+    grid-template-columns: 1fr 1fr;
 }
+
 #tour ul {
     display: grid;
     grid-template-columns: 1fr 1fr ;
     font-family: "DM Sans", sans-serif;
     column-gap: 10px;
     margin-left: 10rem;
+    color: var(--black);
+    font-weight: bold;
 }
 
 
@@ -149,6 +165,7 @@ strong {
     width: 100%;
 }
 
+/*ALBUM SECTION STYLES-----*/
 #albums img {
     width: 450px;
     height: 450px;
@@ -167,7 +184,7 @@ strong {
 
 #albums h2 {
     font-size: 35px;
-    color: black;
+    color: var(--black);
     font-weight: bold;
     font-family: "Lalezar", serif;
 }
@@ -178,7 +195,7 @@ strong {
     margin-left: 70px;
     font-family: "DM Sans", sans-serif;
     font-size: 20px;
-    color: black;
+    color: var(--black);
 }
 
 #albums {
@@ -227,7 +244,7 @@ strong {
     font-size: 21px;
 }
 
-
+/*----- GUESSING GAME STYLES-----*/
 #game {
     padding-bottom: 2rem;
     margin-top: 50px;
@@ -245,12 +262,56 @@ strong {
 #game h2 {
     grid-column: 1/-1;
     font-size: 35px;
-    color:var(--white);
+    color:var(--black);
     font-weight: bold;
     font-family: "Lalezar", serif;
-    text-shadow:2px 2px 2px #15162E;
 }
 
+
+#gameDisplay {
+    grid-column: 2/2;
+    grid-row: 2/4;
+}
+
+#gameDisplay h3 {
+    font-family: "Lalezar", serif;
+    color: var(--black);
+    font-size: 35px;
+}
+
+
+#gameDisplay p {
+    font-family: "DM Sans", sans-serif;
+    font-size: 22px;
+    color: var(--black);
+}
+
+#game img {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 10px;
+    margin-left: 8.5em;
+}
+
+#game span {
+    color: var(--orange);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.message {
+    display: none;
+}
+
+#gameOutput {
+    margin-left: 6rem;
+    color: var(--black);
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+}
+
+/*-----FORM-----*/
 #game form {
     grid-column: 1/2;
     margin-top: 9em;
@@ -263,6 +324,7 @@ label, input {
 label {
     font-family: "DM Sans", sans-serif;
     font-size: 25px;
+    color: var(--black);
 }
 
 input[type="number"] {
@@ -290,48 +352,8 @@ input[type="submit"]:hover {
     box-shadow: -10px 8px 10px #15162E;
     font-size: 21px;
 }
-#gameDisplay {
-    grid-column: 2/2;
-    grid-row: 2/4;
-}
 
-#gameDisplay h3 {
-    font-family: "Lalezar", serif;
-    font-size: 35px;
-    text-shadow:2px 2px 2px #15162E;
-}
-
-
-#gameDisplay p {
-    font-family: "DM Sans", sans-serif;
-    font-size: 22px;
-}
-
-#game img {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 10px;
-    margin-left: 8.5em;
-}
-
-#game span {
-    color: var(--orange);
-    font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.message {
-    display: none;
-}
-
-#gameOutput {
-    margin-left: 6rem;
-    color: var(--white);
-    font-family: "DM Sans", sans-serif;
-    font-size: 20px;
-}
-
+/*-----CONTACT STYLES-----*/ 
 #contact {
     background-color: var(--blue);
     display: grid;
@@ -369,9 +391,19 @@ input[type="submit"]:hover {
     margin-bottom: 8px;
 }
 
+#contact input[type="submit"] {
+    width: 300px;
+    height: 60px;
+}
+
+.error {
+    border: 2px solid #FDA037;
+}
+
 #contact label {
     font-size: 20px;
     margin-bottom: 8px;
+    color: var(--white);
 }
  
 #contact p {
@@ -385,10 +417,15 @@ input[type="submit"]:hover {
     display: none;
 }
 
+.phoneRequired, .emailRequired {
+    color: var(--orange);
+}
+
 .required {
     color: var(--orange);
 }
 
+/*-----FORM RADIOS-----*/
 
 fieldset {
     width: 50%;

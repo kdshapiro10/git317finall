@@ -1,6 +1,5 @@
-
+"use strict";
 // DARK MODE FUNCTION
-
 
 
 
@@ -27,21 +26,23 @@ function guessGame(event) {
 
     // set default, so they don't show up on page load
     message.style.display = "none";
-    gameOutput.innerHTML = "";
+    gameOutput.innerHTML  = "";
+    numGuess.classList.remove("error");
     
     //  loop if user entered a non valid number
     if(isNaN(userGuess) || userGuess < 1 || userGuess >10) {
         message.style.display = "block";
+        numGuess.classList.add("error");
     } else {
         message.style.display = "none";
-        gameOutput.innerHTML = `Your guess was: ${userGuess}, <br>Random Number is: ${randomNum}<br>`;
-    }
+        gameOutput.innerHTML = `Your guess is: ${userGuess} <br>Random Number is: ${randomNum}<br>`; //only displayed once user has inputted a number that is between 1 and 10
 
-    // valid number loop, win or lose 
-    if (userGuess === randomNum) { // win 
-        gameOutput.innerHTML += "Congratulations!! You Won a Free Vinyl!!"
-    } else { //lose
-        gameOutput.innerHTML += "Sorry! Better Luck Next Time!"
+        // valid number loop, win or lose 
+        if (userGuess === randomNum) { // win 
+            gameOutput.innerHTML += "Congratulations!! You Won a Free Vinyl!!"
+        } else { //lose
+            gameOutput.innerHTML += "Sorry! Better Luck Next Time!"
+        }
     }
 }
 
@@ -73,3 +74,41 @@ for (let i = 0;  i < buttons.length; i++) { // loop through buttons
 }
 
 // FORM VALIDATION FUNCTION
+
+function validateForm(event) {
+
+    event.preventDefault();
+
+    let fullName = document.getElementById("fullName");
+    let phone = document.getElementById("phone");
+    let email = document.getElementById("email");
+    let comments = document.getElementById("comments");
+    let contactPhone = document.getElementById("phonePref");
+    let contactEmail = document.getElementById("emailPref");
+    let contactOutput = document.getElementById("contact");
+
+    let fullNameError =  fullName.nextElementSibling;
+    let phoneError = phone.nextElementSibling;
+    let emailError = email.nextElementSibling;
+    let commentsError = comments.nextElementSibling;
+
+    let phoneRequiredSpan = document.querySelector(".phoneRequired");
+    let emailRequiredSpan = document.querySelector(".emailRequired");
+
+    let method = "";
+
+
+    contactOutput.classList.add("hidden");
+
+    fullName.classList.add("error");
+    phoneNum.classList.remove("error");
+    email.classList.remove("error");
+    comments.classList.remove("error");
+   
+
+    ;
+
+    contactOutput = "";
+
+    let isValid = true;
+}
