@@ -5,12 +5,28 @@
 
 
 
+//PRODUCT SWITCHER 
+// selecting all of the albums and button on page
+let albums = document.querySelectorAll('.album');
+let buttons = document.querySelectorAll('#albumButtons button');
 
+// added event listener for clicking each of the buttons
+for (let i = 0;  i < buttons.length; i++) { // loop through buttons
+    buttons[i].addEventListener('click', function() { 
 
-
-
-
-
+        // looping through the albums
+        for (let j = 0; j < albums.length; j++) {
+            // show the album that has been clicked
+            if (i === j) {
+                albums[j].classList.add('currentItem');
+                albums[j].classList.remove('hiddenItem');
+            } else { // album that is not currently showing
+                albums[j].classList.remove('currentItem');
+                albums[j].classList.add('hiddenItem');
+            }
+        }
+     });
+}
 
 
 // GUESSING GAME FUNCTION
@@ -50,35 +66,12 @@ function guessGame(event) {
 document.getElementById("guessGame").addEventListener("click", guessGame);
 
 
-//PRODUCT SWITCHER 
-// selecting all of the albums and button on page
-let albums = document.querySelectorAll('.album');
-let buttons = document.querySelectorAll('#albumButtons button');
-
-// added event listener for clicking each of the buttons
-for (let i = 0;  i < buttons.length; i++) { // loop through buttons
-    buttons[i].addEventListener('click', function() { 
-
-        // looping through the albums
-        for (let j = 0; j < albums.length; j++) {
-            // show the album that has been clicked
-            if (i === j) {
-                albums[j].classList.add('currentItem');
-                albums[j].classList.remove('hiddenItem');
-            } else { // album that is not currently showing
-                albums[j].classList.remove('currentItem');
-                albums[j].classList.add('hiddenItem');
-            }
-        }
-     });
-}
-
 // FORM VALIDATION FUNCTION
-
 function validateForm(event) {
 
     event.preventDefault();
 
+    // inputs
     let fullName = document.getElementById("fullName");
     let phone = document.getElementById("phone");
     let email = document.getElementById("email");
@@ -87,28 +80,46 @@ function validateForm(event) {
     let contactEmail = document.getElementById("emailPref");
     let contactOutput = document.getElementById("contact");
 
-    let fullNameError =  fullName.nextElementSibling;
-    let phoneError = phone.nextElementSibling;
-    let emailError = email.nextElementSibling;
-    let commentsError = comments.nextElementSibling;
-
+    // spans
     let phoneRequiredSpan = document.querySelector(".phoneRequired");
     let emailRequiredSpan = document.querySelector(".emailRequired");
 
-    let method = "";
+    // regular expressions
+    let fullNameRegex = /^[A-Za-z]+([ '-][A-Za-z]+)*$/ ;
+    let phoneRegex =  /^\+?[1-9]\d{1,14}$/;
+    let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
 
-
+    // hide output paragraph
     contactOutput.classList.add("hidden");
 
-    fullName.classList.add("error");
+    // remove error from inputs
+    fullName.classList.remove("error");
     phoneNum.classList.remove("error");
     email.classList.remove("error");
     comments.classList.remove("error");
    
-
-    ;
-
-    contactOutput = "";
+    fullName.nextElementSibling.classList.add("hidden");
+    phone.nextElementSibling.classList.add("hidden");
+    email.nextElementSibling.classList.add("hidden");
+    comments.nextElementSibling.classList.add("hidden");
+    
+    
+    let output= "";
 
     let isValid = true;
+
+
+    // full name validation
+    if(!fullNameRegex.test(fullName.value)) {
+        isValid = false;
+        //add error class to input
+        fullName.classList.add("error");
+        //display the error message 
+        fullName.nextElementSibling.classList.remove("hidden");
+    }
+    
+    
+  
 }
+
+document.getElementById("contactForm").addEventListener("submit", validateForm);

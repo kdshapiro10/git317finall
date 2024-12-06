@@ -143,9 +143,6 @@
             <label for="email">Email Address: <span class="emailRequired">*</span></label>
             <input type="email" name="email" id="email">
             <p class="hidden">Please enter a valid email address</p>
-            <label for="comments">Comments: <span class="required">*</span></label>
-            <textarea for="comments" id="comments"></textarea>
-            <p class="hidden">Please enter a comment</p>
             <fieldset>
                 <legend>Preferred Contact: <span class="required">*</span></legend>
                 <label for="phoneProf" class="radio">
@@ -163,7 +160,10 @@
                     <span class="radio_label">Email</span>
                 </label>
             </fieldset>
-            <input type="submit" name="submitcontact" id="submitcontact" value="Send!">
+            <label for="comments">Comments: <span class="required">*</span></label>
+            <textarea for="comments" id="comments"></textarea>
+            <p class="hidden">Please enter a comment</p>
+            <input type="submit" name="submitContact" id="submitContact" value="Send!">
             <p id="contactOutput" class="hidden"></p>
         </form>
     </section>
