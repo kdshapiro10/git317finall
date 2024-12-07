@@ -118,8 +118,26 @@ function validateForm(event) {
         fullName.nextElementSibling.classList.remove("hidden");
     }
     
+    if(!phoneRegex.test(phone.value)) {
+        isValid = false;
+        phone.classList.add("error");
+        phone.nextElementSibling.remove("hidden");
+    }
+
+    if(!emailRegex.test(email.value)) {
+        isValid = false;
+        email.classList.add("error");
+        email.nextElementSibling.classList.remove("hidden");
+    }
     
-  
+    if(comments.value === "") {
+        isValid = false;
+        comments.classList.add("error");
+        comments.nextElementSibling.remove("hidden");
+    }
+
+    
+   
 }
 
 document.getElementById("contactForm").addEventListener("submit", validateForm);
